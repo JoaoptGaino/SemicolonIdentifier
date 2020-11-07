@@ -1,12 +1,24 @@
+import javax.swing.JOptionPane;
+
 public class SemicolonIdentifier {
-	public static void CheckSemiColon(String str) {
+	public static boolean CheckSemiColon(String str) {
 		if(str.contains(";")) {
-			System.out.println("True");
+			return true;
 		}else {
-			System.out.println("False");
+			return false;
 		}
 	}
+	public static String insertSemi(String str){
+		return str + ";";
+	}
 	public static void main(String[] args) {
-		CheckSemiColon("João");
+		String text = JOptionPane.showInputDialog("Write something");
+		
+		if(CheckSemiColon(text)== true) {
+			JOptionPane.showMessageDialog(null, text);
+		}else {
+			
+			JOptionPane.showMessageDialog(null, insertSemi(text));
+		}
 	}
 }
